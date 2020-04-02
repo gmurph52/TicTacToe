@@ -83,6 +83,19 @@ class Game extends React.Component {
     });
   }
 
+  handlePlayAgain() {
+    this.setState(null);
+    this.setState({
+      history: [
+        {
+          squares: Array(9).fill(null)
+        }
+      ],
+      stepNumber: 0,
+      xIsNext: true
+    });
+  }
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
@@ -97,9 +110,13 @@ class Game extends React.Component {
       );
     });
 
+    let restartButton;
     let status;
     if (winner) {
       status = "Winner: " + winner;
+      restartButton = (
+        <button onClick={() => this.handlePlayAgain()}>Play Again</button>
+      );
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
@@ -108,6 +125,7 @@ class Game extends React.Component {
       <div className="game">
         <div className="game-board">
           <Board squares={current.squares} onClick={i => this.handleClick(i)} />
+          <div>{restartButton}</div>
         </div>
         <div className="game-info">
           <div>{status}</div>
