@@ -53,7 +53,8 @@ class Game extends React.Component {
         }
       ],
       stepNumber: 0,
-      xIsNext: true
+      xIsNext: true,
+      gameStarted: false
     };
   }
 
@@ -72,7 +73,8 @@ class Game extends React.Component {
         }
       ]),
       stepNumber: history.length,
-      xIsNext: !this.state.xIsNext
+      xIsNext: !this.state.xIsNext,
+      gameStarted: true
     });
   }
 
@@ -92,7 +94,8 @@ class Game extends React.Component {
         }
       ],
       stepNumber: 0,
-      xIsNext: true
+      xIsNext: true,
+      gameStarted: false
     });
   }
 
@@ -112,11 +115,18 @@ class Game extends React.Component {
 
     let restartButton;
     let status;
+
+    if(this.state.gameStarted) {
+      restartButton = (
+        <button onClick={() => this.handlePlayAgain()}>{winner ? 'Play Again' : 'Restart Game ' }</button>
+      );
+    }
+
     if (winner) {
       status = "Winner: " + winner;
-      restartButton = (
-        <button onClick={() => this.handlePlayAgain()}>Play Again</button>
-      );
+      // restartButton = (
+      //   <button onClick={() => this.handlePlayAgain()}>Play Again</button>
+      // );
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
@@ -126,6 +136,7 @@ class Game extends React.Component {
         <div className="game-board">
           <Board squares={current.squares} onClick={i => this.handleClick(i)} />
           <div>{restartButton}</div>
+         
         </div>
         <div className="game-info">
           <div>{status}</div>
