@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Game from "./game.js"
+import Root from "./root.js"
 
-ReactDOM.render(<Game />, document.getElementById("root"));
+ReactDOM.render(<Root />, document.getElementById("root"));

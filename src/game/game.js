@@ -1,5 +1,6 @@
 import React from 'react';
-import Board from './board';
+import Board from '../board/board';
+import './game.css'
 
 export default class Game extends React.Component {
 	constructor(props) {
@@ -87,13 +88,13 @@ export default class Game extends React.Component {
 	  }
   
 	  return (
-		<div className="game">
-		  <div className="game-board">
+		<div class="game">
+		  <div class="game-board">
 			<Board squares={current.squares} onClick={i => this.handleClick(i)} />
 			<div>{restartButton}</div>
 		   
 		  </div>
-		  <div className="game-info">
+		  <div class="game-info">
 			<div>{status}</div>
 			<ol>{moves}</ol>
 		  </div>
