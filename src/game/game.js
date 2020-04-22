@@ -67,7 +67,7 @@ export default class Game extends React.Component {
 		const desc = move ? "Go to move #" + move : "Go to game start";
 		return (
 		  <li key={move}>
-			<button onClick={() => this.jumpTo(move)}>{desc}</button>
+			<button className="default-button w3-theme-action history-button" onClick={() => this.jumpTo(move)}>{desc}</button>
 		  </li>
 		);
 	  });
@@ -77,7 +77,7 @@ export default class Game extends React.Component {
   
 	  if(this.state.gameStarted) {
 		restartButton = (
-		  <button onClick={() => this.handlePlayAgain()}>{winner ? 'Play Again' : 'Restart Game ' }</button>
+		  <button className="default-button w3-theme-action" onClick={() => this.handlePlayAgain()}>{winner ? 'Play Again' : 'Restart Game ' }</button>
 		);
 	  }
   
@@ -91,12 +91,15 @@ export default class Game extends React.Component {
 		<div className="game-wrapper w3-theme-l5">
 			<div className="game">
 				<div className="game-board">
-					<Board squares={current.squares} onClick={i => this.handleClick(i)} />
+					<div className="board-and-status">
+						<Board squares={current.squares} onClick={i => this.handleClick(i)} />
+						<div className="status">{status}</div>
+					</div>
 					<div className="restart-button">{restartButton}</div>
 				
 				</div>
 				<div className="game-info">
-					<div>{status}</div>
+					<div>Game History</div>
 					<ol>{moves}</ol>
 				</div>
 			</div>
