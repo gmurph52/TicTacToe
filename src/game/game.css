@@ -9,13 +9,16 @@
 }
 
 .game {
-	padding-top: 32px;
+	margin-top: 32px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-between;
 	height: 100%;
 }
 
+.game-board {
+	margin-left: 64px
+}
 .board-and-status {
 	display: flex;
 }
@@ -25,7 +28,7 @@
 }
 
 .game-info {
-	margin-left: 20px;
+	margin-right: 64px;
 }
 
 ol,
