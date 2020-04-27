@@ -100,13 +100,14 @@ export default class Game extends React.Component {
 	  return (
 		<div className="game-wrapper w3-theme-l5">
 			<div className="game">
-				<div className="game-board">
-					<div className="board-and-status">
-						<Board squares={current.squares} winningSquares={winningSquares} onClick={i => this.handleClick(i)} />
-						<div className="status">{status}</div>
+				<div className="game-board-filler">
+					<div className="game-board">
+						<div className="board-and-status">
+							<Board squares={current.squares} winningSquares={winningSquares} onClick={i => this.handleClick(i)} />
+							<div className="status">{status}</div>
+						</div>
+						<div className="restart-button">{restartButton}</div>	
 					</div>
-					<div className="restart-button">{restartButton}</div>
-				
 				</div>
 				<div className="game-info">
 					<div>Game History</div>
