@@ -3,13 +3,16 @@ import Square from '../square/square.js'
 import './board.css'
 
 export default class Board extends React.Component {
+	
 	renderSquare(i) {
-	  return (
+		let isWinningSquare = this.props.winningSquares ? this.props.winningSquares.some(x => x === i) : false;
+		return (
 		<Square
-		  value={this.props.squares[i]}
-		  onClick={() => this.props.onClick(i)}
+			value={this.props.squares[i]}
+			isWinningSquare={isWinningSquare}
+			onClick={() => this.props.onClick(i)}
 		/>
-	  );
+		);
 	}
   
 	render() {

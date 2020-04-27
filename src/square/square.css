@@ -12,6 +12,12 @@
 	text-align: center;
 	width: 64px;
   }
+
+  .winning-square {
+	  border-color: #fff;
+	  color: #fff; 
+	  background-color:#4caf50;
+  }
   
   .square:focus {
 	outline: none;
