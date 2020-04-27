@@ -80,8 +80,11 @@ export default class Game extends React.Component {
 		  <button className="default-button w3-theme-action" onClick={() => this.handlePlayAgain()}>{winner ? 'Play Again' : 'Restart Game ' }</button>
 		);
 	  }
-  
-	  if (winner) {
+
+	  if (history.length > 9 && !winner) {
+		status = "Cat's Game";
+	  }
+	  else if (winner) {
 		status = "Winner: " + winner;
 	  } else {
 		status = "Next player: " + (this.state.xIsNext ? "X" : "O");
