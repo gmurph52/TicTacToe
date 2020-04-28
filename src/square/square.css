@@ -1,16 +1,25 @@
+:root {
+	--square-size: 10vw;
+	--max-size: calc(((100vw - (395px)) / 3)  - 25px);  /* status + status margin + history + history margin = 395 */
+}
+
 .square {
 	background: #fff;
 	border: 1px solid #999;
 	float: left;
-	font-size: 40px;
+	font-size: 6vw;
 	font-weight: bold;
-	line-height: 64px;
-	height: 64px;
+	line-height: var(--square-size);
+	height: var(--square-size);
+	width: var(--square-size);
 	margin-right: -1px;
 	margin-top: -1px;
 	padding: 0;
 	text-align: center;
-	width: 64px;
+	max-width: var(--max-size);
+	max-height: var(--max-size);
+	min-width: 54px;
+	min-height: 54px;
   }
 
   .winning-square {

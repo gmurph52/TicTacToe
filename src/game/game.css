@@ -9,7 +9,7 @@
 }
 
 .game {
-	margin-top: 32px;
+	margin-top: 64px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -33,6 +33,7 @@
 }
 
 .game-info {
+	width: 185px;
 	margin-right: 64px;
 }
 

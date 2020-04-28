@@ -4,3 +4,6 @@
 	display: table;
   }
   
+  .board {
+	  min-width: 165px;
+  }
