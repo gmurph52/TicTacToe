@@ -6,10 +6,12 @@ export default class Board extends React.Component {
 	
 	renderSquare(i) {
 		let isWinningSquare = this.props.winningSquares ? this.props.winningSquares.some(x => x === i) : false;
+		let isLastMove = this.props.lastMove != null ? this.props.lastMove === i : false
 		return (
 		<Square
 			value={this.props.squares[i]}
 			isWinningSquare={isWinningSquare}
+			isLastMove={isLastMove}
 			onClick={() => this.props.onClick(i)}
 		/>
 		);

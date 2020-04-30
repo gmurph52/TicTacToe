@@ -8,12 +8,14 @@ export default class Game extends React.Component {
 	  this.state = {
 		history: [
 		  {
-			squares: Array(9).fill(null)
+			squares: Array(9).fill(null),
+			lastMove: null	
 		  }
 		],
 		stepNumber: 0,
 		xIsNext: true,
-		gameStarted: false
+		gameStarted: false,
+		
 	  };
 	}
   
@@ -28,12 +30,14 @@ export default class Game extends React.Component {
 	  this.setState({
 		history: history.concat([
 		  {
-			squares: squares
+			squares: squares,
+			lastMove: i
 		  }
 		]),
 		stepNumber: history.length,
 		xIsNext: !this.state.xIsNext,
-		gameStarted: true
+		gameStarted: true,
+		
 	  });
 	}
   
@@ -54,7 +58,8 @@ export default class Game extends React.Component {
 		],
 		stepNumber: 0,
 		xIsNext: true,
-		gameStarted: false
+		gameStarted: false,
+		lastMove: null
 	  });
 	}
   
@@ -96,14 +101,14 @@ export default class Game extends React.Component {
 		  <button className="default-button w3-theme-action" onClick={() => this.handlePlayAgain()}>{winner ? 'Play Again' : 'Restart Game ' }</button>
 		);
 	  }
-  
+
 	  return (
 		<div className="game-wrapper w3-theme-l5">
 			<div className="game">
 				<div className="game-board-filler">
 					<div className="game-board">
 						<div className="board-and-status">
-							<Board squares={current.squares} winningSquares={winningSquares} onClick={i => this.handleClick(i)} />
+							<Board squares={current.squares} winningSquares={winningSquares} lastMove={current.lastMove} onClick={i => this.handleClick(i)} />
 							<div className="status">{status}</div>
 						</div>
 						<div className="restart-button">{restartButton}</div>	

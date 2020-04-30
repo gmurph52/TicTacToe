@@ -2,18 +2,18 @@ import React from 'react';
 import './square.css'
 
 export default function Square(props) {
+
+	var style = 'square';
+	
 	if(props.isWinningSquare) {
-		return (
-			<button className="square winning-square" onClick={props.onClick}>
-			  {props.value}
-			</button>
-		  );	
-	} else {	
-		return (
-			<button className="square" onClick={props.onClick}>
-				{props.value}
-			</button>
-		);
-	}
+		style = 'square winning-square';
+	} else 	if(props.isLastMove) {
+		style = 'square last-move';
+	}	
+	return (
+		<button className={style} onClick={props.onClick}>
+			{props.value}
+		</button>
+	);
   }
   

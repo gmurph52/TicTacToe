@@ -1,5 +1,5 @@
 :root {
-	--square-size: 10vw;
+	--square-size: 9vw;
 	--max-size: calc(((100vw - (395px)) / 3)  - 25px);  /* status + status margin + history + history margin = 395 */
 }
 
@@ -26,6 +26,11 @@
 	  border-color: #fff;
 	  color: #fff; 
 	  background-color:#4caf50;
+  }
+
+  .last-move{
+	color:#000; 
+	background-color:#dbefdc
   }
   
   .square:focus {
