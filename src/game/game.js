@@ -75,7 +75,7 @@ export default class Game extends React.Component {
 	}
 
 	getGameStatus(history, current, winner) {
-		if (history.length === 10 && current == history[9] && !winner) {
+		if (history.length === 10 && current === history[9] && !winner) {
 			return "Cat's Game";
 		}
 		else if (winner) {
