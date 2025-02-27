@@ -1,4 +1,5 @@
-**_NOTE:_** This project is old now and doesn't work on the latest version of node. After cloning, make sure you are using node V16.xx.x, run `npm install`, then `npm start` to start the app.
+> [!NOTE]
+> This project is old now and doesn't work on the latest version of node. After cloning, make sure you are using node V16.xx.x, run `npm install`, then `npm start` to start the app.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
